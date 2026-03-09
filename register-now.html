@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Agency Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-teal: #2bb3c0;
+            --call-orange: #ff5a2f;
+            --whatsapp-green: #25d366;
+            --telegram-blue: #0088cc;
+            --bg-light: #f4f7f8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-light);
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--primary-teal);
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Hero Image */
+        .hero-box {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .hero-box img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Action Buttons */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .btn:active { transform: scale(0.98); }
+        .btn i { margin-right: 10px; font-size: 20px; }
+
+        .btn-call { background-color: var(--call-orange); }
+        .btn-wa { background-color: var(--whatsapp-green); }
+        .btn-tg { background-color: var(--telegram-blue); }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        .form-card h2 {
+            color: var(--primary-teal);
+            margin-top: 0;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            outline-color: var(--primary-teal);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary-teal);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Info Text */
+        .info-section {
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Join Our Elite Agency Now
+    </div>
+
+    <div class="container">
+        <div class="hero-box">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Join Agency">
+        </div>
+
+        <a href="tel:+910000000000" class="btn btn-call">
+            <i class="fas fa-phone-alt"></i> Call To Join Our Agency
+        </a>
+
+        <a href="https://wa.me/910000000000" class="btn btn-wa">
+            <i class="fab fa-whatsapp"></i> Click to Chat on WhatsApp
+        </a>
+
+        <a href="https://t.me/yourusername" class="btn btn-tg">
+            <i class="fab fa-telegram-plane"></i> Contact us on Telegram
+        </a>
+
+        <div class="form-card">
+            <h2>Fill the Details to Register</h2>
+            <form action="#">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="number" placeholder="Age" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="City" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Pincode" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Profession" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+        </div>
+
+        <div class="info-section">
+            If you are interested in joining our agency, you can contact us directly using the options provided above. Our team is available to guide you through the process and answer any questions you may have regarding registration, eligibility, and opportunities.
+        </div>
+    </div>
+
+</body>
+</html>
+
