@@ -51,7 +51,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Action Buttons */
+        /* Action Buttons with Icon Spacing */
         .btn {
             display: flex;
             align-items: center;
@@ -64,10 +64,11 @@
             font-weight: bold;
             font-size: 16px;
             transition: transform 0.2s;
+            gap: 12px; /* Icons aur text ke beech space yahan se set hogi */
         }
 
         .btn:active { transform: scale(0.98); }
-        .btn i { margin-right: 10px; font-size: 20px; }
+        .btn i { font-size: 20px; }
 
         .btn-call { background-color: var(--call-orange); }
         .btn-wa { background-color: var(--whatsapp-green); }
@@ -89,9 +90,7 @@
             margin-bottom: 20px;
         }
 
-        .input-group {
-            margin-bottom: 15px;
-        }
+        .input-group { margin-bottom: 15px; }
 
         input {
             width: 100%;
@@ -116,7 +115,37 @@
             margin-top: 10px;
         }
 
-        /* Info Text */
+        /* Thank You Section */
+        #thank-you-page {
+            display: none;
+            text-align: center;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .whatsapp-prompt {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+
+        .btn-wa-alt {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
         .info-section {
             padding: 20px;
             color: #666;
@@ -127,9 +156,7 @@
 </head>
 <body>
 
-    <div class="header">
-        Join Our Elite Agency Now
-    </div>
+    <div class="header">Join Our Elite Agency Now</div>
 
     <div class="container">
         <div class="hero-box">
@@ -148,33 +175,43 @@
             <i class="fab fa-telegram-plane"></i> Contact us on Telegram
         </a>
 
-        <div class="form-card">
+        <div class="form-card" id="form-section">
             <h2>Fill the Details to Register</h2>
-            <form action="#">
-                <div class="input-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="input-group">
-                    <input type="number" placeholder="Age" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" placeholder="City" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" placeholder="Pincode" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" placeholder="Profession" required>
-                </div>
+            <form onsubmit="showThankYou(event)">
+                <div class="input-group"><input type="text" placeholder="Full Name" required></div>
+                <div class="input-group"><input type="number" placeholder="Age" required></div>
+                <div class="input-group"><input type="text" placeholder="City" required></div>
+                <div class="input-group"><input type="number" placeholder="Pincode" required></div>
+                <div class="input-group"><input type="text" placeholder="Profession" required></div>
                 <button type="submit" class="submit-btn">Submit Registration</button>
             </form>
         </div>
 
+        <div id="thank-you-page">
+            <i class="fas fa-check-circle" style="font-size: 70px; color: var(--whatsapp-green); margin-bottom: 20px;"></i>
+            <h1 style="color: var(--primary-teal); margin-bottom: 10px;">Thank You!</h1>
+            <p>Your details have been received successfully.</p>
+            
+            <div class="whatsapp-prompt">
+                <p style="font-weight: bold; margin-bottom: 15px;">Now contact our team on WhatsApp to fully complete your membership</p>
+                <a href="https://wa.me/918819073580?text=I%20have%20submitted%20my%20details.%20Please%20complete%20my%20membership." class="btn-wa-alt">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
         <div class="info-section">
-            If you are interested in joining our agency, you can contact us directly using the options provided above. Our team is available to guide you through the process and answer any questions you may have regarding registration, eligibility, and opportunities.
+            If you are interested in joining our agency, you can contact us directly using the options provided above. Our team is available to guide you through the process.
         </div>
     </div>
 
+    <script>
+        function showThankYou(event) {
+            event.preventDefault();
+            document.getElementById('form-section').style.display = 'none';
+            document.getElementById('thank-you-page').style.display = 'block';
+            window.scrollTo({ top: 100, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
-
