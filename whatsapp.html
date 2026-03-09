@@ -1,11 +1,20 @@
 <!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
-<title>WhatsApp Redirect</title>
-<script>
-window.location.href = "https://wa.me/918819073580?text=I%20got%20your%20number%20from%20Instagram";
-</script>
-</head>
+<title>Opening WhatsApp...</title><script>
+var phone = "918819073580";
+var message = "I got your number from Instagram";
+var whatsappURL = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+var isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+if (isMobile) {
+    window.location.href = whatsappURL;
+} else {
+    window.location.href = "https://web.whatsapp.com/send?phone=" + phone + "&text=" + encodeURIComponent(message);
+}
+</script></head>
 <body>
+<p>Opening WhatsApp...</p>
 </body>
 </html>
