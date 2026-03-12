@@ -1,0 +1,20 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8">
+<title>Opening WhatsApp...</title><script>
+var phone = "919557534202";
+var message = "I got your number from Instagram";
+var whatsappURL = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+var isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+if (isMobile) {
+    window.location.href = whatsappURL;
+} else {
+    window.location.href = "https://web.whatsapp.com/send?phone=" + phone + "&text=" + encodeURIComponent(message);
+}
+</script></head>
+<body>
+<p>Opening WhatsApp...</p>
+</body>
+</html>
